@@ -1,0 +1,52 @@
+// Colors
+// Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
+// Color names - http://name-of-color.com/
+
+$primary-color: #8DBB01;
+$primary-dark-color:#223122;
+$primary-light-color: #8DBB01;
+$white-color: #fff;
+$black-color: #000;
+
+$base-font-sans-serif: 'Outfit',  sans-serif;
+
+
+// Body
+$base-text-color: #223122 !default;
+$base-background-color: $white-color !default;
+$font-size-base: 16px !default;
+$line-height-base: 1.5 !default;
+$base-font-family: $base-font-sans-serif !default;
+
+$vertical-rhythm: ($line-height-base * 1em);
+
+$base-min-width: 320px;
+
+// Links
+$base-link-color: $primary-dark-color;
+
+// Buttons 
+$btn-color: $white-color !default;
+$btn-background: $black-color !default;
+$btn-padding: 0.4em 0.7em !default;
+$btn-font-size: inherit !default;
+
+// Forms
+$form-element-padding: $btn-padding !default;
+$form-element-border-color: $primary-dark-color !default;
+$form-element-focus-border-color: $black-color !default;
+$placeholder-color: $black-color !default;
+
+// Headers
+$h1-font-size: 75px !default;
+$h2-font-size: 55px !default;
+$h3-font-size: 40px !default;
+$h4-font-size: 24px !default;
+$h5-font-size: 16px !default;
+$h6-font-size: 16px !default;
+
+$headings-font-family: inherit !default;
+$headings-color: inherit !default;
+
+
+$animation-speed: 0.3s;
