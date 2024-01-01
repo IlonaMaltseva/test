@@ -3,40 +3,9 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	// width: 100%;
-	// position: absolute;
-	// top: 0px;
-	// left: 0px;
-	// background-repeat: repeat-x;
-	// background-image: none;
 	background-color: #fff;
 	z-index: 1000;
 	transition: background-color .25s;
-	.logo {
-		display: inline-block;
-		height: 114px;
-		width: 200px;
-		text-indent: -5000px;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-image: url(../img/logo.png);
-		background-image: -webkit-image-set(url(../img/logo.png) 1x, url(../img/logo_2x.png) 2x);
-		background-image: image-set(url(../img/logo.png) 1x, url(../img/logo_2x.png) 2x);
-	}
-	.mobile-toggle {
-		display: none;
-		height: 45px;
-		width: 45px;
-		background-image: url(../img/icon-hamburger.png);
-		background-image: -webkit-image-set(url(../img/icon-hamburger.png) 1x, url(../img/icon-hamburger_2x.png) 2x);
-		background-image: image-set(url(../img/icon-hamburger.png) 1x, url(../img/icon-hamburger_2x.png) 2x);
-	}
-	.mobile-toggle.on {
-		background-image: url(../img/icon-hamburger-close.png);
-		background-image: -webkit-image-set(url(../img/icon-hamburger-close.png) 1x, url(../img/icon-hamburger-close_2x.png) 2x);
-		background-image: image-set(url(../img/icon-hamburger-close.png) 1x, url(../img/icon-hamburger-close_2x.png) 2x);
-	}
 }
 
 .header-shim {
@@ -619,6 +588,8 @@ nav.standard {
 			.ubermenu-item {
 				>a {
 					position: relative;
+					padding-left: 0;
+					padding-right: 0;
 					&::after {
 						position: absolute;
 						content: '';

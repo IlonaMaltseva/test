@@ -3,6 +3,7 @@ jQuery(function () {
 	isElementExist(".slider", initSliderMobile);
 
 	initTabs();
+	initAccordion();
 });
 
 // Helper if element exist then call function
@@ -17,6 +18,24 @@ function isElementExist(_el, _cb) {
 		}
 	}
 }
+
+function initAccordion() {
+	jQuery('.accordion__item:not(.open) .accordion__expanded').hide();
+	jQuery('.accordion__title').on('click', function () {
+		var item = jQuery(this).closest('.accordion__item')[0];
+		jQuery(this).closest('.accordion__item').toggleClass('open');
+		if (jQuery(this).closest('.accordion__item').hasClass('open')) {
+			jQuery(this).closest('.accordion__item').find('.accordion__expanded').stop().slideDown();
+			jQuery(this).closest('.accordion__item').closest('.accordion').find('.accordion__item').each(function () {
+				if (this != item) {
+					jQuery(this).removeClass('open').find('.accordion__expanded').stop().slideUp()
+				}
+			});
+		} else {
+			jQuery(this).closest('.accordion__item').find('.accordion__expanded').stop().slideUp();
+		}
+	});
+};
 
 function initTabs() {
 	jQuery('.tab-control__btn').on('click', function(e) {
