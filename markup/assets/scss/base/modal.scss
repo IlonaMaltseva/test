@@ -1,0 +1,44 @@
+.modal-content{
+    padding: 40px;
+    width: 100%;
+    max-width: 592px;
+    outline: none;
+    &--sm{
+        max-width: 428px;
+    }
+
+    p{
+        margin-bottom: 32px;
+    }
+}
+
+.fancybox-bg{
+    background: #041027;
+    .fancybox-is-open &{
+        opacity: 0.4;
+    }
+}
+
+.fancybox-slide--html{
+    .fancybox-close-small{
+        top: 20px;
+        right: 20px;
+        color: #fff;
+        padding: 1px;
+    }
+}
+
+.fancybox-button{
+    svg{
+        path{
+            stroke-width: 2;
+        }
+    }
+}
+
+.fancybox-close-small{
+    width: 18px;
+    height: 18px;
+    background: #223122;
+    border-radius: 50%;
+}

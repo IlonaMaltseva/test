@@ -41,17 +41,27 @@ textarea {
 	box-sizing: border-box;
 	font-size: 14px;
 	line-height: 1.2;
-	color: #fff;
+	color: rgba($color: #223122, $alpha: .5);
 	font-weight: normal;
 	outline: none;
 	height: 48px;
 	padding: 0 12px;
-	background-color: rgba(255, 255, 255, 0.08);
-	border: 1px solid transparent;
+	background: transparent;
+	border: 1px solid rgba($color: #223122, $alpha: .16);
 	border-radius: 8px;
 
+	&.input--light{
+		background-color: rgba(255, 255, 255, 0.08);
+		color: #fff;
+		border: 1px solid transparent;
+
+		@include placeholder {
+			color: rgba($color: #fff, $alpha: .5);
+		}
+	}
+
 	@include placeholder {
-		color: rgba($color: #fff, $alpha: .5);
+		color: rgba($color: #223122, $alpha: .5);
 	}
 }
 
@@ -73,6 +83,16 @@ input[type="reset"] {
 
 input[type="file"] {
 	max-width: 100%;
+}
+
+/* button, */
+input[type='button'],
+input[type='reset'],
+// input[type='file'],
+input[type='submit'],
+button[type='submit'] {
+	@extend .btn;
+	border: none;
 }
 
 //------------------- style #input #textarea
@@ -102,6 +122,12 @@ input[type="search"]::-webkit-search-cancel-button {
 .subscribe-form{
 	width: 100%;
 
+	.form-field{
+		&:not(:last-child){
+			margin-bottom: 32px;
+		}
+	}
+
 	.btn{
 		width: 100%;
 		padding-top: 10px;
@@ -120,11 +146,11 @@ input[type="search"]::-webkit-search-cancel-button {
 		.form-field{
 			&__input{
 				padding-right: 35px;
-				color: #223122;
-				border-color: rgba($color: #223122, $alpha: .08);
-				@include placeholder {
-					color: rgba($color: #223122, $alpha: .5);
-				}
+				// color: #223122;
+				// border-color: rgba($color: #223122, $alpha: .08);
+				// @include placeholder {
+				// 	color: rgba($color: #223122, $alpha: .5);
+				// }
 			}
 		}
 
