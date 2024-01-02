@@ -1,15 +1,26 @@
 .modal-content{
-    padding: 40px;
+    padding: 24px;
     width: 100%;
     max-width: 592px;
     outline: none;
+    @include media(">=tablet") {
+        padding: 40px;
+    }
     &--sm{
         max-width: 428px;
+    }
+
+    &--m{
+        max-width: 574px;
     }
 
     p{
         margin-bottom: 32px;
     }
+}
+
+.fancybox-active{
+    overflow: hidden;
 }
 
 .fancybox-bg{

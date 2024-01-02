@@ -5212,16 +5212,28 @@ nav.standard a.current-page-ancestor::after {
 }
 
 .modal-content {
-  padding: 40px;
+  padding: 24px;
   width: 100%;
   max-width: 592px;
   outline: none;
 }
+@media (min-width: 768px) {
+  .modal-content {
+    padding: 40px;
+  }
+}
 .modal-content--sm {
   max-width: 428px;
 }
+.modal-content--m {
+  max-width: 574px;
+}
 .modal-content p {
   margin-bottom: 32px;
+}
+
+.fancybox-active {
+  overflow: hidden;
 }
 
 .fancybox-bg {
@@ -8031,4 +8043,32 @@ a {
 }
 .award-card img {
   display: block;
+}
+
+.thanks-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.thanks-message__icon {
+  max-width: 80px;
+  margin: 0 auto 24px;
+}
+@media (min-width: 1024px) {
+  .thanks-message__icon {
+    max-width: 95px;
+    margin-bottom: 40px;
+  }
+}
+.thanks-message__icon img {
+  display: block;
+  width: 100%;
 }

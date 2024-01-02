@@ -1,12 +1,12 @@
 var $ = jQuery.noConflict();
 jQuery(function () {
 	isElementExist(".slider", initSliderMobile);
+	isElementExist("#modal-show", initModalShow);
 
 	initTabs();
 	initAccordion();
-	initSubscribeModal();
 	initFancybox();
-	initModalShow();
+	// initModalShow();
 });
 
 // Helper if element exist then call function
@@ -26,40 +26,8 @@ function initFancybox() {
 	$.fancybox.defaults.touch = false;
 }
 
-function initModalShow(){
-	const modal = $('#contact-modal').iziModal({
-	  closeButton: true,
-	  bodyOverflow: false,
-	  focusInput: false,
-	});
-  
-	const showShowModal = localStorage.getItem('closedShowModal');
-	if (showShowModal === null) {
-	  setTimeout(function () {
-		modal.iziModal('open');
-	  }, 1000);
-	}
-}
-
-function initSubscribeModal() {
-	const modal = $("#subscribe-modal");
-
-	modal.fancybox({
-		closeButton: true,
-		afterClose: function () {
-			localStorage.setItem('closedModal', 'true');
-		}
-	});
-
-	const showModal = localStorage.getItem('closedModal');
-	if (showModal === null) {
-		setTimeout(function () {
-			if (!localStorage.getItem('closedModal')) {
-				modal.trigger('click');
-				localStorage.setItem('closedModal', 'true');
-			}
-		}, 5000);
-	}
+function initModalShow() {
+	$("#modal-show").fancybox().trigger('click');
 }
 
 function initAccordion() {
