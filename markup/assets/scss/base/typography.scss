@@ -148,8 +148,11 @@ p{
 }
 
 .text--l{
-    font-size: 20px;
-    line-height: 1.6;
+	font-size: 18px;
+	line-height: 1.6;
+	@include media(">=desktop") {
+		font-size: 20px;
+	}
 }
 
 a{

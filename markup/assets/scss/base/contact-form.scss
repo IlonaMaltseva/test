@@ -26,6 +26,14 @@
 						color: #fff;
 					}
 				}
+				select.mktoField {
+					color: #fff;
+					background-image: url(../img/icon-plus.svg) !important;
+					&.mktoValid,
+					&.mktoInvalid{
+						color: #fff;
+					}
+				}
 				.mktoHtmlText {
 					color: #fff;
 				}
@@ -35,6 +43,9 @@
 							label {
 								background-color: rgb(255 255 255 / 8%);
 								color: rgb(255 255 255 / 40%);
+								&:hover{
+									border-color: #fff;
+								}
 							}
 						}
 					}
@@ -129,14 +140,16 @@
 			select.mktoField {
 				appearance: none;
 				min-height: 46px;
-				padding-right: 20px !important;
+				padding-right: 30px !important;
+				color: rgba($color: #223122, $alpha: .5);
 				text-overflow: ellipsis;
 				text-indent: 0;
-				background-image: url(../img/icon-plus.svg) !important;
+				background-image: url(../img/icon-plus-dark.svg) !important;
 				background-repeat: no-repeat;
 				background-position: 98% 50%;
-				background-size: 24px 24px !important;
-				option {
+				background-size: 12px 12px !important;
+				&.mktoValid,
+				&.mktoInvalid{
 					color: #223122;
 				}
 			}
@@ -187,9 +200,9 @@
 							margin: 0;
 							padding: 7px 10px;
 							&:hover {
-								background-color: #8DBB01;
-								border-color: #8DBB01;
-								color: #fff;
+								background-color: #fff;
+								border-color: #223122;
+								color: #223122;
 							}
 							&::before {
 								display: none;
