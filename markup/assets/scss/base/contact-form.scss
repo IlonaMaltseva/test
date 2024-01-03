@@ -54,7 +54,6 @@
 	
 
     &__title{
-        font-weight: normal;
         margin-bottom: 5px;
     }
 
@@ -103,8 +102,8 @@
 				color: #223122;
 				float: none;
 				font-size: 14px;
+				line-height: 1.2;
 				height: auto;
-				line-height: 1;
 				min-height: 0;
                 height: 46px;
                 text-transform: capitalize;
@@ -119,7 +118,7 @@
 				}
 			}
 			textarea.mktoField {
-				padding: 14px 12px 0 !important;
+				padding: 14px 12px 10px !important;
 			}
 			.mktoField.mktoTextField.mktoInvalid {
 				border: 1px solid #f00;
@@ -130,8 +129,13 @@
 			select.mktoField {
 				appearance: none;
 				min-height: 46px;
-				padding: 12px !important;
+				padding-right: 20px !important;
+				text-overflow: ellipsis;
 				text-indent: 0;
+				background-image: url(../img/icon-plus.svg) !important;
+				background-repeat: no-repeat;
+				background-position: 98% 50%;
+				background-size: 24px 24px !important;
 				option {
 					color: #223122;
 				}

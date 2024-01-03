@@ -2,11 +2,11 @@ var $ = jQuery.noConflict();
 jQuery(function () {
 	isElementExist(".slider", initSliderMobile);
 	isElementExist("#modal-show", initModalShow);
+	isElementExist(".contact-form .mktoForm", initFormModal);
 
 	initTabs();
 	initAccordion();
 	initFancybox();
-	// initModalShow();
 });
 
 // Helper if element exist then call function
@@ -24,6 +24,12 @@ function isElementExist(_el, _cb) {
 
 function initFancybox() {
 	$.fancybox.defaults.touch = false;
+}
+
+function initFormModal(){
+	$('.contact-form .mktoForm').on('click', 'input[type="checkbox"], label', function (e) {
+		e.stopImmediatePropagation();
+	});
 }
 
 function initModalShow() {
@@ -74,7 +80,7 @@ function initTabs() {
 };
 
 function initSliderMobile() {
-	const breakpoint = window.matchMedia('(min-width: 768px)');
+	const breakpoint = window.matchMedia('(min-width: 1024px)');
 	let mySwiper;
 	function breakpointChecker() {
 

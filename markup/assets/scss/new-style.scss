@@ -72,13 +72,13 @@ $breakpoints: (
 }
 
 .hidden-desktop{
-	@include media("<tablet") {
+	@include media("<desktop") {
 		display: none !important;
 	}
 }
 
 .visible-desktop{
-	@include media(">=tablet") {
+	@include media(">=desktop") {
 		display: none !important;
 	}
 }
@@ -166,22 +166,8 @@ a{
     }
 
     @include media(">=desktop") {
-        // padding: 80px 0;
         padding: 100px 0;
     }
-
-    // &--offset{
-    //     padding-top: 0;
-    //     padding-bottom: 60px;
-    //     @include media(">=desktop") {
-    //         padding-bottom: 80px;
-    //     }
-    // }
-
-    // &--s{
-    //     padding-top: 50px;
-    //     padding-bottom: 50px;
-    // }
 
     &--m{
         padding: 40px 0;
@@ -189,41 +175,17 @@ a{
             padding: 50px 0 100px;
         }
     }
-
-    // &--l{
-    //     padding: 40px 0;
-    //     @include media(">=desktop") {
-    //         padding-top: 100px;
-    //         padding-bottom: 100px;
-    //     }
-    // }
-
-    // &--xl{
-    //     padding-top: 60px;
-    //     padding-bottom: 60px;
-    //     @include media(">=desktop") {
-    //         padding-top: 120px;
-    //         padding-bottom: 120px;
-    //     }
-    // }
 }
-
-// .section-content{
-//     padding: 50px 0 100px;
-// }
 
 .section-intro{
     padding: 20px 0 0;
-	@include media(">=tablet") {
-        padding: 40px 0;
-    }
 	@include media(">=desktop") {
         padding: 80px 0;
     }
 }
 
 .section-heading{
-    max-width: 715px;
+    // max-width: 715px;
     // margin-bottom: 24px;
     margin-bottom: 32px;
 	@include media(">=tablet") {
@@ -237,42 +199,44 @@ a{
     }
 
     &__text{
-        max-width: 590px;
-        margin-left: auto;
-        margin-right: auto;
+        // max-width: 450px;
+        // margin-left: auto;
+        // margin-right: auto;
         margin-bottom: 40px;
         &:last-child{
             margin-bottom: 0;
         }
     }
 
-    &--center{
+    &.align--md{
+        @include media("<desktop") {
+            text-align: center;
+        }
+    }
+
+    &.align--center{
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
 
-    &--start{
+    &.align--start{
         text-align: left;
         margin-left: 0;
         margin-right: 0;
         max-width: none;
     }
 
-    // &--start{
-    //     text-align: left;
-    //     margin-left: 0;
-    //     margin-right: 0;
-    //     max-width: none;
-    //     // @include media(">=desktop") {
-    //     //     text-align: left;
-    //     // }
-    // }
-
     h2,
     h3{
         &:last-child{
             margin-bottom: 0;
+        }
+    }
+
+    br{
+        @include media("<phone-sm") {
+            display: none;
         }
     }
 }
@@ -347,7 +311,9 @@ a{
     }
 
     p{
-        margin-bottom: 28px;
+        @include media(">=desktop") {
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -536,8 +502,7 @@ a{
     }
 
     .swiper-wrapper{
-        @include media(">=tablet") {
-            // gap: 80px;
+        @include media(">=desktop") {
             gap: 15px;
             flex-wrap: wrap;
         }
@@ -549,19 +514,15 @@ a{
     .swiper-slide{
         height: auto;   
         box-sizing: border-box;
-        @include media(">=tablet") {
-            // width: calc(33.333% - 54px);
-            width: calc(33.333% - 10px);
-            margin-right: 0 !important;
-        }
         @include media(">=desktop") {
+            margin-right: 0 !important;
             width: calc(33.333% - 22px);
         }
     }
 
-    &:not(.slider--case){
+    &:not(.slider--row){
         .swiper-slide{
-            @include media("<tablet") {
+            @include media("<desktop") {
                 width: 320px !important;
             }
             @include media("<phone-sm") {
@@ -573,28 +534,30 @@ a{
         }
     }
 
-    &--case{
+    &--row{
         overflow: hidden;
+        .swiper-slide{
+            @include media("<desktop", ">=phone-md") {
+                width: 49.2% !important;
+            }
+        }
     }
 
-    &--gap-1{
+    &.gap--1{
         .swiper-wrapper{
-            @include media(">=tablet") {
+            @include media(">=desktop") {
                 gap: 8px;
             }
         }
 
         .swiper-slide{
-            @include media(">=tablet") {
-                width: calc(50% - 6px);
-            }
-            @include media(">=tablet-lg") {
+            @include media(">=desktop") {
                 width: calc(33.333% - 6px);
             }
         }
     }
 
-    &--col-1{
+    &.col--1{
         .swiper-wrapper{
             @include media(">=desktop") {
                 gap: 80px;
@@ -602,43 +565,48 @@ a{
         }
 
         .swiper-slide{
-            // @include media(">=tablet") {
-            //     width: calc(33.333% - 54px);
-            // }
             @include media(">=desktop") {
                 width: calc(33.333% - 54px);
             }
         }
     }
 
-    &--col-2{
+    &.col--2{
         .swiper-wrapper{
-            @include media(">=tablet") {
+            @include media(">=desktop") {
                 gap: 8px;
             }
         }
 
         .swiper-slide{
-            @include media(">=tablet") {
-                width: calc(50% - 6px);
-            }
-            @include media(">=tablet-lg") {
-                width: calc(33.333% - 6px);
-            }
             @include media(">=desktop") {
                 width: calc(25% - 6px);
             }
         }
     }
+
+    &.col--3{
+        .swiper-wrapper{
+            @include media(">=desktop") {
+                gap: 20px;
+            }
+        }
+
+        .swiper-slide{
+            @include media(">=desktop") {
+                width: calc(25% - 15px);
+            }
+        }
+    }
 }
 
-.list{
+.card-set{
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
     margin-bottom: 37px;
     @include media(">=tablet") {
-        margin-bottom: 60px;
+        margin-bottom: 80px;
     }
     @include media(">=desktop") {
         gap: 80px;
@@ -658,23 +626,25 @@ a{
         }
     }
 
-    &--gap-1{
-        gap: 12px;
-        @include media(">=desktop") {
+    &.gap--1{
+        // gap: 12px;
+        gap: 24px;
+        @include media(">=tablet") {
             gap: 32px;
         }
 
         > li{
             @include media(">=tablet") {
-                width: calc(33.333% - 8px);
+                width: calc(50% - 18px);
             }
+            width: 100%;
             @include media(">=desktop") {
                 width: calc(33.333% - 22px);
             }
         }
     }
 
-    &--col-1{
+    &.col--1{
         gap: 44px 10px;
         @include media(">=tablet") {
             gap: 44px 32px;
@@ -687,9 +657,9 @@ a{
         }
     }
 
-    &--col-2{
+    &.col--2{
         @include media(">=tablet") {
-            gap: 80px;
+            gap: 40px 80px;
         }
         > li{
             @include media(">=tablet") {
@@ -701,7 +671,7 @@ a{
         }
     }
 
-    &--col-3{
+    &.col--3{
         gap: 12px;
         @include media(">=tablet") {
             gap: 32px;
@@ -740,12 +710,12 @@ a{
     }
 }
 
-.offset--bottom{
-    margin-bottom: 60px;
-    @include media(">=desktop") {
-        padding-bottom: 120px;
-    }
-}
+// .offset--bottom{
+//     margin-bottom: 60px;
+//     @include media(">=desktop") {
+//         padding-bottom: 120px;
+//     }
+// }
 
 .btn-holder{
     text-align: center;
@@ -753,10 +723,13 @@ a{
         width: 100%;
     }
 
-    &--border{
+    &.border--offset{
         text-align: left;
-        padding-top: 20px;
+        padding-top: 40px;
         border-top: 1px solid rgba($color: #223122, $alpha: .08);
+        @include media(">=desktop") {
+            padding-top: 20px;
+        }
     }
 
     .btn{
@@ -828,6 +801,9 @@ a{
         color: #fff;
         background-color: #8DBB01;
         border-color: #8DBB01;
+        &.align--end{
+            justify-content: flex-end;
+        }
 
         .btn{
             width: 100%;
@@ -854,9 +830,10 @@ a{
             background-color: rgba($color: #223122, $alpha: .16);
         }
 
-        .text--sm{
+        .text--muted{
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            opacity: 0.5;
+            opacity: 0.4;
         }
     }
 
@@ -890,10 +867,7 @@ a{
 .action-panel{
     display: flex;
     align-items: center;
-    gap: 20px;
-    @include media(">=desktop") {
-        gap: 24px;
-    }
+    gap: 24px;
     &__btn{
         display: flex;
         align-items: center;
@@ -914,11 +888,8 @@ a{
 
         .icon{
             flex-shrink: 0;
-            font-size: 18px;
+            font-size: 22px;
             color: rgba($color: #223122, $alpha: .5);
-            @include media(">=desktop") {
-                font-size: 22px;
-            }
         }
     }
 }
@@ -963,15 +934,24 @@ a{
 .item-card{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    @include media(">=tablet") {
+        align-items: flex-start;
+        text-align: left;
+    }
 
     &__logo{
         display: flex;
         align-items: center;
-        min-height: 70px;
-        margin-bottom: 35px;
         flex: auto;
+        margin-bottom: 24px;
+        @include media(">=desktop") {
+            min-height: 42px;
+            margin-bottom: 32px;
+        }
         img{
             display: block;
         }
@@ -981,20 +961,29 @@ a{
 .headtitle-num{
     display: flex;
     align-items: center;
-    text-align: left;
+    flex-direction: column;
     font-size: 55px;
     line-height: 1.095;
-    gap: 15px;
-    @include media(">=tablet") {
-        margin-bottom: 24px;
-    }
+    gap: 5px;
+    margin-bottom: 24px;
+    // @include media(">=tablet") {
+    //     margin-bottom: 24px;
+    // }
     @include media(">=desktop") {
+        flex-direction: row;
+        gap: 15px;
         margin-bottom: 30px;
     }
 
     &__text{
         font-size: 16px;
         line-height: 1.45;
+    }
+
+    br{
+        @include media("<desktop") {
+            display: none;
+        }
     }
 }
 
@@ -1246,9 +1235,12 @@ a{
     &--circle{
         > li{
             &:before {
-                top: 2px;
+                top: 0;
                 font-size: 22px;
                 @extend .icon-check-circle;
+                @include media(">=desktop") {
+                    top: 2px;
+                }
             }
         }
     }
@@ -1707,10 +1699,10 @@ a{
     flex-direction: column;
     gap: 40px;
     @include media(">=desktop") {
-        flex-direction: row;
+        gap: 50px;
     }
     @include media(">=desktop-md") {
-        gap: 50px;
+        flex-direction: row;
     }
 }
 
@@ -1721,12 +1713,11 @@ a{
     flex-shrink: 0;
     margin-bottom: 0;
     @include media(">=desktop") {
-        align-items: flex-start;
-        flex-direction: column;
         gap: 10px;
-        width: 240px;
     }
     @include media(">=desktop-md") {
+        align-items: flex-start;
+        flex-direction: column;
         width: 260px;
     }
 
@@ -1779,9 +1770,11 @@ a{
         flex-shrink: 0;
         width: 100%;
         height: 239px;
+        @include media(">=phone-sm") {
+            height: 400px;
+        }
         @include media(">=tablet") {
             width: 280px;
-            height: 400px;
         }
         img{
             display: block;

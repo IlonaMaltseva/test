@@ -17,7 +17,8 @@ h1,
 	font-size: $h1-font-size;
 	text-transform: capitalize;
 	line-height: 1;
-	margin: 0 0 32px;
+	// margin: 0 0 32px;
+	margin: 0 0 24px;
 	@include media("<desktop") {
 		font-size: 48px;
 	}

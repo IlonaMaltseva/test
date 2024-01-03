@@ -34,22 +34,41 @@
     .fancybox-close-small{
         top: 20px;
         right: 20px;
-        color: #fff;
-        padding: 1px;
+        padding: 0;
     }
 }
 
 .fancybox-button{
+    &:after,
+    &:before {
+        position: absolute;
+        content: "";
+        left: 2px;
+        right: 2px;
+        height: 2px;
+		background-color: #fff;
+		border-radius: 3px;
+        transition: all 0.35s ease;
+    }
+    &:after {
+        margin-top: -1px;
+        top: 50%;
+        transform: rotate(45deg);
+    }
+    &:before {
+        margin-bottom: -1px;
+        bottom: 50%;
+        transform: rotate(-45deg);
+    }
     svg{
-        path{
-            stroke-width: 2;
-        }
+        display: none;
     }
 }
 
 .fancybox-close-small{
     width: 18px;
     height: 18px;
+    opacity: 1;
     background: #223122;
     border-radius: 50%;
 }
