@@ -4120,15 +4120,13 @@ a {
 }
 @media (min-width: 768px) {
   .section-heading {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
     margin-bottom: 40px;
   }
 }
 @media (min-width: 1024px) {
   .section-heading {
-    margin-bottom: 80px;
+    max-width: 800px;
+    margin: 0 auto 80px;
   }
 }
 .section-heading.text--start {
@@ -4137,7 +4135,7 @@ a {
   text-align: left;
   max-width: none;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .section-heading.text--start-lg {
     margin-left: 0;
     margin-right: 0;
@@ -4145,12 +4143,12 @@ a {
     max-width: none;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .section-heading.text--start--sm {
     text-align: left;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .section-heading.width--row {
     max-width: 600px;
   }
@@ -6332,5 +6330,6 @@ a {
   }
 }
 .quote-tile__title {
+  font-weight: normal;
   margin-bottom: 0;
 }

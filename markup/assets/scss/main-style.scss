@@ -174,14 +174,12 @@ a{
     text-align: center;
     margin-bottom: 32px;
 	@include media(">=tablet") {
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
         margin-bottom: 40px;
     }
 
 	@include media(">=desktop") {
-        margin-bottom: 80px;
+        max-width: 800px;
+        margin: 0 auto 80px;
     }
 
     &.text--start{
@@ -192,7 +190,7 @@ a{
     }
 
     &.text--start-lg{
-        @include media(">=tablet") {
+        @include media(">=desktop") {
             margin-left: 0;
             margin-right: 0;
             text-align: left;
@@ -201,13 +199,13 @@ a{
     }
 
     &.text--start--sm{
-        @include media("<tablet") {
+        @include media("<desktop") {
             text-align: left;
         }
     }
 
     &.width--row{
-        @include media(">=tablet") {
+        @include media(">=desktop") {
             max-width: 600px;
         }
     }
@@ -1969,6 +1967,7 @@ a{
         padding: 40px;
     }
     &__title{
+        font-weight: normal;
         margin-bottom: 0;
     }
 }
