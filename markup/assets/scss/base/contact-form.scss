@@ -46,8 +46,10 @@
 							label {
 								background-color: rgb(255 255 255 / 8%);
 								color: rgb(255 255 255 / 40%);
-								&:hover{
-									border-color: #fff;
+								@include media(">=desktop") {
+									&:hover{
+										border-color: #fff;
+									}
 								}
 							}
 						}
@@ -134,10 +136,10 @@
 			textarea.mktoField {
 				padding: 14px 12px 10px !important;
 			}
-			.mktoField.mktoTextField.mktoInvalid {
-				border: 1px solid #f00;
-			}
-			.mktoField.mktoEmailField.mktoInvalid {
+			.mktoField.mktoTextField.mktoInvalid,
+			.mktoField.mktoEmailField.mktoInvalid,
+			textarea.mktoField.mktoInvalid,
+			select.mktoField.mktoInvalid  {
 				border: 1px solid #f00;
 			}
 			select.mktoField {
@@ -155,12 +157,6 @@
 				&.mktoInvalid{
 					color: $primary-dark-color;
 				}
-			}
-			select.mktoField.mktoInvalid {
-				border: 1px solid #f00;
-			}
-			textarea.mktoField.mktoInvalid {
-				border: 1px solid #f00;
 			}
 			.mktoHtmlText {
 				color: $primary-dark-color;
@@ -202,10 +198,12 @@
 							line-height: 1;
 							margin: 0;
 							padding: 7px 10px;
-							&:hover {
-								background-color: #fff;
-								border-color: $primary-dark-color;
-								color: $primary-dark-color;
+							@include media(">=desktop") {
+								&:hover {
+									background-color: #fff;
+									border-color: $primary-dark-color;
+									color: $primary-dark-color;
+								}
 							}
 							&::before {
 								display: none;
@@ -224,19 +222,6 @@
 						padding: 0;
 						position: relative;
 						width: 100% !important;
-						// input[type="checkbox"] {
-						// 	position: absolute;
-                        //     top: 4px;
-                        //     left: 0;
-						// 	appearance: auto;
-                        //     background-color: #fff;
-						// 	border: 2px solid $primary-dark-color;
-						// 	width: 14px;
-						// 	height: 14px;
-						// 	line-height: 1;
-						// 	opacity: 1;
-                        //     border-radius: 4px !important;
-						// }
 						label {
                             display: block;
                             padding-left: 22px;

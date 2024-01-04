@@ -3101,8 +3101,10 @@ nav.standard a.current-page-ancestor::after {
   background-color: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.4);
 }
-.contact-form.light--theme .mktoForm .mktoFormRow #LblserviceInterest ~ .mktoCheckboxList label:hover {
-  border-color: #fff;
+@media (min-width: 1024px) {
+  .contact-form.light--theme .mktoForm .mktoFormRow #LblserviceInterest ~ .mktoCheckboxList label:hover {
+    border-color: #fff;
+  }
 }
 .contact-form.light--theme .mktoForm .mktoFormRow #LblmHCNewsletterSubscriber ~ .mktoCheckboxList label {
   color: #fff;
@@ -3194,10 +3196,10 @@ nav.standard a.current-page-ancestor::after {
 .contact-form .mktoForm .mktoFormRow textarea.mktoField {
   padding: 14px 12px 10px !important;
 }
-.contact-form .mktoForm .mktoFormRow .mktoField.mktoTextField.mktoInvalid {
-  border: 1px solid #f00;
-}
-.contact-form .mktoForm .mktoFormRow .mktoField.mktoEmailField.mktoInvalid {
+.contact-form .mktoForm .mktoFormRow .mktoField.mktoTextField.mktoInvalid,
+.contact-form .mktoForm .mktoFormRow .mktoField.mktoEmailField.mktoInvalid,
+.contact-form .mktoForm .mktoFormRow textarea.mktoField.mktoInvalid,
+.contact-form .mktoForm .mktoFormRow select.mktoField.mktoInvalid {
   border: 1px solid #f00;
 }
 .contact-form .mktoForm .mktoFormRow select.mktoField {
@@ -3216,12 +3218,6 @@ nav.standard a.current-page-ancestor::after {
 }
 .contact-form .mktoForm .mktoFormRow select.mktoField.mktoValid, .contact-form .mktoForm .mktoFormRow select.mktoField.mktoInvalid {
   color: #223122;
-}
-.contact-form .mktoForm .mktoFormRow select.mktoField.mktoInvalid {
-  border: 1px solid #f00;
-}
-.contact-form .mktoForm .mktoFormRow textarea.mktoField.mktoInvalid {
-  border: 1px solid #f00;
 }
 .contact-form .mktoForm .mktoFormRow .mktoHtmlText {
   color: #223122;
@@ -3262,10 +3258,12 @@ nav.standard a.current-page-ancestor::after {
   margin: 0;
   padding: 7px 10px;
 }
-.contact-form .mktoForm .mktoFormRow #LblserviceInterest ~ .mktoCheckboxList label:hover {
-  background-color: #fff;
-  border-color: #223122;
-  color: #223122;
+@media (min-width: 1024px) {
+  .contact-form .mktoForm .mktoFormRow #LblserviceInterest ~ .mktoCheckboxList label:hover {
+    background-color: #fff;
+    border-color: #223122;
+    color: #223122;
+  }
 }
 .contact-form .mktoForm .mktoFormRow #LblserviceInterest ~ .mktoCheckboxList label::before {
   display: none;
