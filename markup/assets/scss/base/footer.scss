@@ -1,6 +1,6 @@
 .nfooter {
 	background-color: #E3ECE4;
-	color: #223122;
+	color: $primary-dark-color;
 	padding: 100px 0;
 	position: relative;
 }
@@ -23,7 +23,7 @@
 }
 
 .nfooter__info {
-	border-bottom: 1px solid rgba($color: #223122, $alpha: .16);
+	border-bottom: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
 	list-style: none;
 	padding-bottom: 45px;
 	margin-bottom: 40px;
@@ -38,9 +38,9 @@
 			margin-bottom: 0;
 		}
 		a {
-			color: #223122;
+			color: $primary-dark-color;
 			&:hover {
-                color: #223122;
+                color: $primary-dark-color;
 				text-decoration: underline;
 			}
 		}
@@ -98,12 +98,12 @@
 			justify-content: center;
 			width: 64px;
 			height: 40px;
-			background-color: rgba($color: #223122, $alpha: .16);
+			background-color: rgba($color: $primary-dark-color, $alpha: .16);
 			border-radius: 8px;
 			transform: scale(1);
 			transition: all .35s ease;
 			&:hover{
-				color: #223122;
+				color: $primary-dark-color;
 				transform: scale(1.1);
 			}
 
@@ -133,7 +133,7 @@
 				display: block;
 				font-size: 16px;
 				line-height: 1.63;
-				color: #223122;
+				color: $primary-dark-color;
 				font-weight: 600;
 				margin-bottom: 8px;
 				&:hover{
@@ -152,7 +152,7 @@
 						display: block;
 						font-size: 14px;
 						line-height: 1.575;
-						color: #223122;
+						color: $primary-dark-color;
 						&:hover{
 							text-decoration: underline;
 						}
@@ -163,7 +163,7 @@
 	}
 }
 .nfooter-bot {
-	background-color: #223122;
+	background-color: $primary-dark-color;
     padding: 25px 0;
 }
 
@@ -207,7 +207,7 @@
 		padding-top: 6px;
 		padding-bottom: 40px;
 		margin-bottom: 40px;
-		border-bottom: 1px solid rgba($color: #223122, $alpha: .16);
+		border-bottom: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
 		> ul{
 			gap: 52px 16px;
 		}

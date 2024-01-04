@@ -10,6 +10,12 @@ h6, .h6 {
 	font-weight: normal;
 	line-height: 1.2;
 	margin: 0 0 0.5em;
+
+    br{
+        @include media("<phone-sm") {
+            display: none;
+        }
+    }
 }
 
 h1,
@@ -17,7 +23,6 @@ h1,
 	font-size: $h1-font-size;
 	text-transform: capitalize;
 	line-height: 1;
-	// margin: 0 0 32px;
 	margin: 0 0 24px;
 	@include media("<desktop") {
 		font-size: 48px;
@@ -57,11 +62,7 @@ h3,
 	margin: 0 0 24px;
 	@include media("<desktop") {
 		font-size: 28px;
-		// margin-bottom: 18px;
 	}
-	// @include media("<tablet") {
-	// 	font-size: 28px;
-	// }
 }
 
 h4,
@@ -93,7 +94,7 @@ h6,
     line-height: 1.5;
     font-weight: normal;
     letter-spacing: 0.05em;
-    color: #223122;
+    color: $primary-dark-color;
     text-transform: uppercase;
     margin: 0 0 24px;
 }
@@ -104,12 +105,6 @@ p{
 		margin-bottom: 0;
 	}
 }
-
-// .title--xl{
-// 	@include media(">=desktop") {
-// 		font-size: 40px;
-// 	}
-// }
 
 .title--m{
 	font-size: 28px;

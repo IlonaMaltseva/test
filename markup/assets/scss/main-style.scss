@@ -22,7 +22,6 @@ $breakpoints: (
 @import 'vendors/icomoon';
 @import 'vendors/swiper';
 @import 'vendors/jquery.fancybox.min';
-// @import 'vendors/izimodal';
 
 @import 'base/variables';
 @import 'base/buttons';
@@ -111,7 +110,7 @@ a{
 }
 
 .bg--primary{
-    background-color: #8DBB01 !important;
+    background-color: $primary-color !important;
     color: #fff;
 }
 
@@ -120,26 +119,12 @@ a{
     color: #fff;
 }
 
-// .text--muted{
-//     opacity: 0.5;
-// }
-
 .bg-decor{
     position: absolute;
     z-index: -1;
     img{
         display: block;
         width: 100%;
-    }
-
-    &--tile{
-        top: 50%;
-        right: 0;
-        // left: 0;
-        width: 1285px;
-        margin: -40px 30px 0 0;
-        // margin: -38px 0 0 118px;
-        transform: translateY(-50%);
     }
 
     &--sm{
@@ -152,7 +137,6 @@ a{
     }
 }
 
-// Section
 .section{
     padding: 60px 0;
     position: relative;
@@ -187,13 +171,12 @@ a{
 }
 
 .section-heading{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
     margin-bottom: 32px;
 	@include media(">=tablet") {
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 40px;
     }
 
@@ -201,25 +184,31 @@ a{
         margin-bottom: 80px;
     }
 
-    &:not(.align--start){
+    &.text--start{
+        margin-left: 0;
+        margin-right: 0;
+        text-align: left;
+        max-width: none;
+    }
+
+    &.text--start-lg{
         @include media(">=tablet") {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: left;
+            max-width: none;
         }
     }
 
-    &.align--start{
-        @include media(">=tablet") {
-            justify-content: flex-end;
-            align-items: flex-start;
+    &.text--start--sm{
+        @include media("<tablet") {
             text-align: left;
         }
     }
 
     &.width--row{
         @include media(">=tablet") {
-            max-width: 800px;
+            max-width: 600px;
         }
     }
 
@@ -229,15 +218,11 @@ a{
             margin-bottom: 0;
         }
     }
-
-    br{
-        @include media("<phone-sm") {
-            display: none;
-        }
-    }
 }
 
 .text-wrap {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 40px;
     &.sm{
         max-width: 450px;
@@ -310,7 +295,7 @@ a{
     z-index: 1;
     max-width: 678px;
     padding: 24px;
-    background-color: #8DBB01;
+    background-color: $primary-color;
 	@include media(">=tablet") {
         padding: 40px;
 	}
@@ -678,9 +663,6 @@ a{
         }
 
         > li{
-            // @include media(">=tablet") {
-            //     width: calc(33.333% - 18px);
-            // }
             @include media(">=desktop") {
                 width: calc(33.333% - 22px);
             }
@@ -759,13 +741,6 @@ a{
     }
 }
 
-// .offset--bottom{
-//     margin-bottom: 60px;
-//     @include media(">=desktop") {
-//         padding-bottom: 120px;
-//     }
-// }
-
 .btn-holder{
     text-align: center;
     @include media("<phone-sm") {
@@ -775,7 +750,7 @@ a{
     &.border--offset{
         text-align: left;
         padding-top: 40px;
-        border-top: 1px solid rgba($color: #223122, $alpha: .08);
+        border-top: 1px solid rgba($color: $primary-dark-color, $alpha: .08);
         @include media(">=desktop") {
             padding-top: 20px;
         }
@@ -835,7 +810,7 @@ a{
     text-align: left;
     width: 100%;
     height: 100%;
-    border: 1px solid rgba($color: #223122, $alpha: .16);
+    border: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
     background-color: rgba($color: #fff, $alpha: .04);
     &--light{
         .card__headtitle{
@@ -848,8 +823,8 @@ a{
     &--cta{
         justify-content: center;
         color: #fff;
-        background-color: #8DBB01;
-        border-color: #8DBB01;
+        background-color: $primary-color;
+        border-color: $primary-color;
         &.align--end{
             justify-content: flex-end;
         }
@@ -867,8 +842,6 @@ a{
         padding: 24px;
         position: relative;
         margin: 0;
-        // border-bottom: 1px solid rgba($color: #223122, $alpha: .16);
-        // color: rgba($color: #223122, $alpha: .4);
         &::before{
             content: '';
             position: absolute;
@@ -876,7 +849,7 @@ a{
             left: 24px;
             right: 24px;
             height: 1px;
-            background-color: rgba($color: #223122, $alpha: .16);
+            background-color: rgba($color: $primary-dark-color, $alpha: .16);
         }
 
         .text--muted{
@@ -931,14 +904,14 @@ a{
 
         &:hover{
             .icon{
-                color: rgba($color: #8DBB01, $alpha: 1);
+                color: rgba($color: $primary-color, $alpha: 1);
             }
         }
 
         .icon{
             flex-shrink: 0;
             font-size: 22px;
-            color: rgba($color: #223122, $alpha: .5);
+            color: rgba($color: $primary-dark-color, $alpha: .5);
         }
     }
 }
@@ -985,8 +958,6 @@ a{
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    max-width: 500px;
-    margin: 0 auto;
     &:not(.align--mobile){
         @include media("<tablet") {
             align-items: center;
@@ -1024,9 +995,6 @@ a{
     line-height: 1.095;
     gap: 5px;
     margin-bottom: 24px;
-    // @include media(">=tablet") {
-    //     margin-bottom: 24px;
-    // }
     @include media(">=desktop") {
         flex-direction: row;
         gap: 15px;
@@ -1050,7 +1018,7 @@ a{
     > li{
         padding-top: 16px;
         padding-bottom: 16px;
-        border-bottom: 1px solid rgba($color: #223122, $alpha: .16);
+        border-bottom: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
         &:first-child{
             padding-top: 0;
         }
@@ -1064,7 +1032,7 @@ a{
                 top: 50%;
                 right: 0;
                 font-size: 14px;
-                color: #8DBB01;
+                color: $primary-color;
                 transform: translateY(-50%);
                 @extend [class^="icon-"];
                 @extend .icon-arrow-right;
@@ -1125,7 +1093,7 @@ a{
 
 .bg-hero{
     height: 200px;
-    background-color: #223122;
+    background-color: $primary-dark-color;
     @include media(">=phone-sm") {
         height: 252px;
     }
@@ -1267,8 +1235,10 @@ a{
 }
 
 .check-list{
-    padding-left: 5px;
     margin-bottom: 30px;
+    @include media(">=desktop") {
+        padding-left: 5px;
+    }
     &:last-child{
         margin-bottom: 0;
     }
@@ -1284,13 +1254,13 @@ a{
             top: 6px;
             left: 0;
             font-size: 12px;
-            color: #8DBB01;
+            color: $primary-color;
             @extend [class^="icon-"];
             @extend .icon-check;
         }
     }
 
-    &--circle{
+    &.circle--icon{
         > li{
             &:before {
                 top: 0;
@@ -1314,7 +1284,7 @@ a{
 .cta-tile{
     padding: 60px 20px;
     text-align: center;
-    background-color: #223122;
+    background-color: $primary-dark-color;
     color: #fff;
     @include media(">=desktop") {
         padding-top: 80px;
@@ -1406,24 +1376,6 @@ a{
         }
     }
 
-    // &__date{
-    //     display: flex;
-    //     align-items: center;
-    //     text-transform: capitalize;
-    //     color: #041027;
-    //     gap: 14px;
-    //     padding: 2px 0 0;
-    //     margin-bottom: 8px;
-
-    //     .icon{
-    //         flex-shrink: 0;
-    //         font-size: 16px;
-    //         @include media(">=desktop") {
-    //             font-size: 22px;
-    //         }
-    //     }
-    // }
-
     &__title{
         font-size: 24px;
         text-transform: capitalize;
@@ -1464,15 +1416,15 @@ a{
         &.active{
             .pagination__link{
                 font-weight: 700;
-                color: #8DBB01;
+                color: $primary-color;
             }
         }
         &.disabled{
             .pagination__link{
                 cursor: auto;
-                background-color: rgba($color: #8DBB01, $alpha: .6);
+                background-color: rgba($color: $primary-color, $alpha: .6);
                 &:hover{
-                    background-color: rgba($color: #8DBB01, $alpha: .6);
+                    background-color: rgba($color: $primary-color, $alpha: .6);
                 }
             }
         }
@@ -1493,7 +1445,7 @@ a{
 
         &--prev,
         &--next{
-            background-color: #8DBB01;
+            background-color: $primary-color;
             color: #fff;
             @include media(">=desktop") {
                 font-size: 14px;
@@ -1501,7 +1453,7 @@ a{
 
             &:hover{
                 color: #fff;
-                background-color: rgba($color: #8DBB01, $alpha: .9);
+                background-color: rgba($color: $primary-color, $alpha: .9);
             }
         }
 
@@ -1526,7 +1478,7 @@ a{
     margin-bottom: 24px;
     &__title{
         width: 100%;
-        border-bottom: 1px solid rgba($color: #223122, $alpha: .08);
+        border-bottom: 1px solid rgba($color: $primary-dark-color, $alpha: .08);
         margin-bottom: 12px;
         padding-bottom: 12px;
     }
@@ -1542,7 +1494,7 @@ a{
                 display: block;
                 text-transform: capitalize;
                 font-weight: 600;
-                color: #8DBB01;
+                color: $primary-color;
             }
         }
     }
@@ -1626,7 +1578,7 @@ a{
     justify-content: center;
     font-size: 12px;
     padding: 5px 10px 5px 0;
-    border-right: 2px solid rgba($color: #223122, $alpha: .16);
+    border-right: 2px solid rgba($color: $primary-dark-color, $alpha: .16);
     @include media(">=phone-sm") {
         font-size: 15px;
         padding-right: 16px;
@@ -1652,7 +1604,7 @@ a{
         + .breadcrumb__item{
             &::before{
                 display: inline-block;
-                color: #223122;
+                color: $primary-dark-color;
                 font-weight: normal;
                 padding: 0 3px;
                 content: "/";
@@ -1668,7 +1620,7 @@ a{
 
         &.active{
             font-weight: 600;
-            color: #8DBB01;
+            color: $primary-color;
         }
     }
 }
@@ -1724,7 +1676,6 @@ a{
     gap: 5px;
     @include media(">=tablet") {
         gap: 32px;
-        // padding: 0 20px;
     }
 
     &--row{
@@ -1744,7 +1695,6 @@ a{
         align-items: center;
         justify-content: center;
         min-height: 80px;
-        // width: 40px;
         img{
             display: block;
         }
@@ -1783,7 +1733,7 @@ a{
         &.active{
             .tab-control__btn{
                 color: #fff;
-                background-color: #223122;
+                background-color: $primary-dark-color;
             }
         }
     }
@@ -1795,7 +1745,7 @@ a{
         text-align: center;
         font-weight: 600;
         padding: 11px 17px;
-        border: 1px solid rgba($color: #223122, $alpha: 0.08);
+        border: 1px solid rgba($color: $primary-dark-color, $alpha: 0.08);
         border-radius: 100px;
         @include media(">=phone-xs") {
             font-size: 16px;
@@ -1950,10 +1900,7 @@ a{
         text-transform: capitalize;
         margin: 0;
         position: relative;
-        // padding-bottom: 10px;
-        // @include media(">=tablet") {
-        //     padding-bottom: 24px;
-        // }
+        cursor: pointer;
         &::before{
             content: '';
             position: absolute;

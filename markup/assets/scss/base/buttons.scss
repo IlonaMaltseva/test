@@ -31,23 +31,23 @@
     }
 
     &--secondary{
-        border-color: #223122;
-        background-color: #223122;
+        border-color: $primary-dark-color;
+        background-color: $primary-dark-color;
     }
 
     &--light{
-        color: #223122;
+        color: $primary-dark-color;
         border-color: #F5E589;
         background-color: #F5E589;
         &:hover{
-            color: #223122;
+            color: $primary-dark-color;
         }
     }
 
     &--link{
         padding: 0;
         border: none;
-        color: $primary-light-color;
+        color: $primary-color;
         &:hover{
             opacity: 0.8;
         }

@@ -462,7 +462,7 @@ th {
   content: "\e90d";
 }
 
-.icon-check-circle:before, .check-list--circle > li:before {
+.icon-check-circle:before, .check-list.circle--icon > li:before {
   content: "\e914";
 }
 
@@ -3091,6 +3091,9 @@ nav.standard a.current-page-ancestor::after {
 .contact-form.light--theme .mktoForm .mktoFormRow select.mktoField.mktoValid, .contact-form.light--theme .mktoForm .mktoFormRow select.mktoField.mktoInvalid {
   color: #fff;
 }
+.contact-form.light--theme .mktoForm .mktoFormRow select.mktoField option {
+  color: #223122;
+}
 .contact-form.light--theme .mktoForm .mktoFormRow .mktoHtmlText {
   color: #fff;
 }
@@ -3443,7 +3446,7 @@ textarea {
           box-sizing: border-box;
   font-size: 14px;
   line-height: 1.2;
-  color: rgba(34, 49, 34, 0.5);
+  color: #223122;
   font-weight: normal;
   outline: none;
   height: 48px;
@@ -3715,6 +3718,16 @@ h6, .h6 {
   font-weight: normal;
   line-height: 1.2;
   margin: 0 0 0.5em;
+}
+@media (max-width: 479px) {
+  h1 br, .h1 br,
+  h2 br, .h2 br,
+  h3 br, .h3 br,
+  h4 br, .h4 br,
+  h5 br, .h5 br,
+  h6 br, .h6 br {
+    display: none;
+  }
 }
 
 h1,
@@ -4049,14 +4062,6 @@ a {
   display: block;
   width: 100%;
 }
-.bg-decor--tile {
-  top: 50%;
-  right: 0;
-  width: 1285px;
-  margin: -40px 30px 0 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
 .bg-decor--sm {
   width: 605px;
   bottom: 0;
@@ -4110,24 +4115,14 @@ a {
 }
 
 .section-heading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   text-align: center;
   margin-bottom: 32px;
 }
 @media (min-width: 768px) {
   .section-heading {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 40px;
   }
 }
@@ -4136,40 +4131,38 @@ a {
     margin-bottom: 80px;
   }
 }
-@media (min-width: 768px) {
-  .section-heading:not(.align--start) {
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.section-heading.text--start {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+  max-width: none;
 }
 @media (min-width: 768px) {
-  .section-heading.align--start {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+  .section-heading.text--start-lg {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    max-width: none;
+  }
+}
+@media (max-width: 767px) {
+  .section-heading.text--start--sm {
     text-align: left;
   }
 }
 @media (min-width: 768px) {
   .section-heading.width--row {
-    max-width: 800px;
+    max-width: 600px;
   }
 }
 .section-heading h2:last-child,
 .section-heading h3:last-child {
   margin-bottom: 0;
 }
-@media (max-width: 479px) {
-  .section-heading br {
-    display: none;
-  }
-}
 
 .text-wrap {
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
 }
 .text-wrap.sm {
@@ -5019,8 +5012,6 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   text-align: left;
-  max-width: 500px;
-  margin: 0 auto;
 }
 @media (max-width: 767px) {
   .item-card:not(.align--mobile) {
@@ -5383,8 +5374,12 @@ a {
 }
 
 .check-list {
-  padding-left: 5px;
   margin-bottom: 30px;
+}
+@media (min-width: 1024px) {
+  .check-list {
+    padding-left: 5px;
+  }
 }
 .check-list:last-child {
   margin-bottom: 0;
@@ -5403,12 +5398,12 @@ a {
   font-size: 12px;
   color: #8DBB01;
 }
-.check-list--circle > li:before {
+.check-list.circle--icon > li:before {
   top: 0;
   font-size: 22px;
 }
 @media (min-width: 1024px) {
-  .check-list--circle > li:before {
+  .check-list.circle--icon > li:before {
     top: 2px;
   }
 }
@@ -6247,6 +6242,7 @@ a {
   text-transform: capitalize;
   margin: 0;
   position: relative;
+  cursor: pointer;
 }
 .accordion__title::before {
   content: "";

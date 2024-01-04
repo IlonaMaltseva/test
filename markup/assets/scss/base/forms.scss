@@ -41,13 +41,13 @@ textarea {
 	box-sizing: border-box;
 	font-size: 14px;
 	line-height: 1.2;
-	color: rgba($color: #223122, $alpha: .5);
+	color: $primary-dark-color;
 	font-weight: normal;
 	outline: none;
 	height: 48px;
 	padding: 0 12px;
 	background: transparent;
-	border: 1px solid rgba($color: #223122, $alpha: .16);
+	border: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
 	border-radius: 8px;
 
 	&.input--light{
@@ -61,7 +61,7 @@ textarea {
 	}
 
 	@include placeholder {
-		color: rgba($color: #223122, $alpha: .5);
+		color: rgba($color: $primary-dark-color, $alpha: .5);
 	}
 }
 
@@ -108,7 +108,7 @@ input[type="search"]::-webkit-search-cancel-button {
 	text-align: left;
 	color: rgba($color: #fff, $alpha: .7);
 	padding: 24px;
-	background-color: #223122;
+	background-color: $primary-dark-color;
 	&__title{
 		font-weight: 500;
 		color: #fff;
@@ -146,10 +146,10 @@ input[type="search"]::-webkit-search-cancel-button {
 		.form-field{
 			&__input{
 				padding-right: 35px;
-				// color: #223122;
-				// border-color: rgba($color: #223122, $alpha: .08);
+				// color: $primary-dark-color;
+				// border-color: rgba($color: $primary-dark-color, $alpha: .08);
 				// @include placeholder {
-				// 	color: rgba($color: #223122, $alpha: .5);
+				// 	color: rgba($color: $primary-dark-color, $alpha: .5);
 				// }
 			}
 		}

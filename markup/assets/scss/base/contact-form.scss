@@ -1,5 +1,5 @@
 .contact-form{
-	color: #223122;
+	color: $primary-dark-color;
 	
 	&.light--theme{
 		color: #fff;
@@ -32,6 +32,9 @@
 					&.mktoValid,
 					&.mktoInvalid{
 						color: #fff;
+					}
+					option{
+						color: $primary-dark-color;
 					}
 				}
 				.mktoHtmlText {
@@ -107,10 +110,10 @@
             textarea.mktoField,
 			select.mktoField {
 				background-color: transparent;
-				border: 1px solid rgba($color: #223122, $alpha: .16);
+				border: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
 				border-radius: 8px !important;
 				box-shadow: none;
-				color: #223122;
+				color: $primary-dark-color;
 				float: none;
 				font-size: 14px;
 				line-height: 1.2;
@@ -125,7 +128,7 @@
 			.mktoField.mktoEmailField,
             textarea.mktoField{
 				@include placeholder {
-					color: rgba($color: #223122, $alpha: .5);
+					color: rgba($color: $primary-dark-color, $alpha: .5);
 				}
 			}
 			textarea.mktoField {
@@ -141,7 +144,7 @@
 				appearance: none;
 				min-height: 46px;
 				padding-right: 30px !important;
-				color: rgba($color: #223122, $alpha: .5);
+				color: rgba($color: $primary-dark-color, $alpha: .5);
 				text-overflow: ellipsis;
 				text-indent: 0;
 				background-image: url(../img/icon-plus-dark.svg) !important;
@@ -150,7 +153,7 @@
 				background-size: 12px 12px !important;
 				&.mktoValid,
 				&.mktoInvalid{
-					color: #223122;
+					color: $primary-dark-color;
 				}
 			}
 			select.mktoField.mktoInvalid {
@@ -160,7 +163,7 @@
 				border: 1px solid #f00;
 			}
 			.mktoHtmlText {
-				color: #223122;
+				color: $primary-dark-color;
 				font-size: 14px;
 				line-height: 1.5;
 				margin-top: 24px;
@@ -182,8 +185,8 @@
 							&:checked {
 								+ {
 									label {
-										background-color: #8DBB01;
-										border-color: #8DBB01;
+										background-color: $primary-color;
+										border-color: $primary-color;
 										color: #fff;
 									}
 								}
@@ -191,9 +194,9 @@
 						}
 						label {
 							background-color: transparent;
-							border: 1px solid rgba($color: #223122, $alpha: .16);
+							border: 1px solid rgba($color: $primary-dark-color, $alpha: .16);
 							border-radius: 4px;
-							color: #223122;
+							color: $primary-dark-color;
 							cursor: pointer;
 							font-size: 12px;
 							line-height: 1;
@@ -201,8 +204,8 @@
 							padding: 7px 10px;
 							&:hover {
 								background-color: #fff;
-								border-color: #223122;
-								color: #223122;
+								border-color: $primary-dark-color;
+								color: $primary-dark-color;
 							}
 							&::before {
 								display: none;
@@ -227,7 +230,7 @@
                         //     left: 0;
 						// 	appearance: auto;
                         //     background-color: #fff;
-						// 	border: 2px solid #223122;
+						// 	border: 2px solid $primary-dark-color;
 						// 	width: 14px;
 						// 	height: 14px;
 						// 	line-height: 1;
@@ -237,7 +240,7 @@
 						label {
                             display: block;
                             padding-left: 22px;
-							color: #223122;
+							color: $primary-dark-color;
 							font-size: 14px;
 							font-weight: 500;
 							line-height: 1.58;
@@ -248,7 +251,7 @@
 								width: 16px;
 								height: 16px;
 								margin-left: -1.7em;
-								border: 2px solid #223122;
+								border: 2px solid $primary-dark-color;
 								border-radius: 4px;
 								box-shadow: none;
 							}
@@ -265,8 +268,8 @@
 			.mktoButtonWrap.mktoBluePill {
 				margin: 0 !important;
 				.mktoButton {
-					background: #8DBB01;
-					border: 1px solid #8DBB01;
+					background: $primary-color;
+					border: 1px solid $primary-color;
 					border-radius: 100px;
 					box-shadow: none;
 					font-family: 'Outfit';
@@ -278,8 +281,8 @@
 					text-transform: capitalize;
 					width: 100% !important;
 					&:hover{
-						background-color: #8DBB01 !important;
-						border-color: #8DBB01 !important;
+						background-color: $primary-color !important;
+						border-color: $primary-color !important;
 						box-shadow: 0 10px 30px rgba($color: #000, $alpha: .25);
 					}
 				}
