@@ -1,0 +1,274 @@
+.tile-row{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: left;
+    gap: 32px;
+    margin-bottom: 40px;
+    @include media(">=tablet") {
+        flex-direction: row;
+        margin-left: -16px;
+        margin-right: -16px;
+        margin-bottom: 60px;
+        gap: 32px 0;
+    }
+
+    > [class*="col--"]{
+        @include media("<tablet") {
+            width: 100%;
+        }
+        @include media(">=tablet") {
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+    }
+
+    &:last-child{
+        margin-bottom: 0;
+    }
+
+    p{
+        &:not(:last-child){
+            margin-bottom: 30px;
+        }
+    }
+
+    h1,
+    h2,
+    h3{
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+
+    .item-card{
+        max-width: 240px;
+        @include media(">=tablet") {
+            margin-left: auto;
+        }
+        @include media(">=desktop") {
+            max-width: 280px;
+        }
+    }
+}
+
+.col--12{
+    @include media(">=tablet") {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.col--11{
+    @include media(">=tablet") {
+        flex: 0 0 91.666667%;
+        max-width: 91.666667%;
+    }
+}
+
+.col--10{
+    @include media(">=tablet") {
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+}
+
+.col--9{
+    @include media(">=tablet") {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+.col--8{
+    @include media(">=tablet") {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+
+.col--7{
+    @include media(">=tablet") {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
+}
+
+.col--6{
+    @include media(">=tablet") {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col--5{
+    @include media(">=tablet") {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+}
+
+.col--4{
+    @include media(">=tablet") {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
+.col--3{
+    @include media(">=tablet") {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.col--2{
+    @include media(">=tablet") {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+.col--1{
+    @include media(">=tablet") {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+}
+
+// col--lg
+.col--lg-12{
+    @include media(">=laptop-md") {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.col--lg-11{
+    @include media(">=laptop-md") {
+        flex: 0 0 91.666667%;
+        max-width: 91.666667%;
+    }
+}
+
+.col--lg-10{
+    @include media(">=laptop-md") {
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+}
+
+.col--lg-9{
+    @include media(">=laptop-md") {
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+}
+
+.col--lg-8{
+    @include media(">=laptop-md") {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+
+.col--lg-7{
+    @include media(">=laptop-md") {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
+}
+
+.col--lg-6{
+    @include media(">=laptop-md") {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col--lg-5{
+    @include media(">=laptop-md") {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+}
+
+.col--lg-4{
+    @include media(">=laptop-md") {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
+.col--lg-3{
+    @include media(">=laptop-md") {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.col--lg-2{
+    @include media(">=laptop-md") {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+.col--lg-1{
+    @include media(">=laptop-md") {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+}
+
+// col--md
+.col--md-6{
+    @include media(">=desktop-lg") {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.col--md-5{
+    @include media(">=desktop-lg") {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+}
+
+.col--md-4{
+    @include media(">=desktop-lg") {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
+.col--md-3{
+    @include media(">=desktop-lg") {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+.col--md-2{
+    @include media(">=desktop-lg") {
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+.col--md-1{
+    @include media(">=desktop-lg") {
+        flex: 0 0 8.333333%;
+        max-width: 8.333333%;
+    }
+}
+
+.align--end{
+    align-items: flex-end !important;
+}
+
+.align--center{
+    align-items: center !important;
+}

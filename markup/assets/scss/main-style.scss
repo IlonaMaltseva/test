@@ -24,6 +24,7 @@ $breakpoints: (
 @import 'vendors/jquery.fancybox.min';
 
 @import 'base/variables';
+@import 'base/grid';
 @import 'base/buttons';
 @import 'base/mixins';
 @import 'base/reset';
@@ -42,11 +43,13 @@ $breakpoints: (
 }
 
 #wrapper {
-    display: block;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
     width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
     z-index: 1;
     padding-top: 109px;
     @include media(">=phone-sm") {
@@ -60,6 +63,10 @@ $breakpoints: (
     }
 }
 
+.main {
+	flex: 1 1 auto;
+}
+
 .container {
     max-width: 1280px;
     padding: 0 20px;
@@ -67,6 +74,24 @@ $breakpoints: (
     width: 100%;
     @include media(">=desktop") {
         padding: 0 32px;
+    }
+}
+
+.bg-stretch{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    @include media("<tablet") {
+        display: none;
+    }
+    img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
 
@@ -80,6 +105,16 @@ $breakpoints: (
 	@include media(">=desktop") {
 		display: none !important;
 	}
+}
+
+.gap--start{
+    @include media(">=desktop") {
+        padding-left: 45px;
+    }
+}
+
+.bg--gray{
+    background-color: #CBCCD0 !important;
 }
 
 .bg--white{
@@ -100,6 +135,10 @@ $breakpoints: (
 
 .bg--dark{
     background-color: $primary-dark-color !important;
+}
+
+.text--left{
+    text-align: left !important;
 }
 
 .bg--primary,
@@ -162,10 +201,6 @@ $breakpoints: (
 	@include media(">=desktop") {
         padding: 80px 0;
     }
-
-    h1{
-        max-width: 950px;
-    }
 }
 
 .section-heading{
@@ -180,14 +215,14 @@ $breakpoints: (
         margin: 0 auto 80px;
     }
 
-    &.text--start{
+    &.title--start{
         margin-left: 0;
         margin-right: 0;
         text-align: left;
         max-width: none;
     }
 
-    &.text--start-lg{
+    &.title--start-lg{
         @include media(">=desktop") {
             margin-left: 0;
             margin-right: 0;
@@ -196,7 +231,7 @@ $breakpoints: (
         }
     }
 
-    &.text--start-sm{
+    &.title--start-sm{
         @include media("<desktop") {
             text-align: left;
         }
@@ -364,20 +399,29 @@ $breakpoints: (
     }
 }
 
-.row{
-    display: flex;
-    align-items: stretch;
-    &__visual{
-        flex-shrink: 0;
-        width: 50%;
-        min-height: 400px;
-        max-height: 710px;
-        &--img{
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+.img-holder{
+    position: relative;
+    img{
+        display: block;
+        width: 100%;
+    }
+
+    figure{
+        display: block;
+        margin: 0;
+        width: 100%;
+    
+        figcaption{
+            text-align: center;
+            padding-top: 10px;
         }
+    }
+}
+
+
+.title--offset{
+    @include media(">=tablet") {
+        margin-bottom: 76px;
     }
 }
 
@@ -607,7 +651,7 @@ $breakpoints: (
         }
     }
 
-    &.col--1{
+    &.card--1{
         .swiper-wrapper{
             @include media(">=desktop") {
                 gap: 80px;
@@ -621,7 +665,7 @@ $breakpoints: (
         }
     }
 
-    &.col--2{
+    &.card--2{
         .swiper-wrapper{
             @include media(">=desktop") {
                 gap: 8px;
@@ -635,7 +679,7 @@ $breakpoints: (
         }
     }
 
-    &.col--3{
+    &.card--3{
         .swiper-wrapper{
             @include media(">=desktop") {
                 gap: 20px;
@@ -688,7 +732,7 @@ $breakpoints: (
         }
     }
 
-    &.col--1{
+    &.card--1{
         gap: 44px 10px;
         @include media(">=tablet") {
             gap: 44px 32px;
@@ -701,7 +745,7 @@ $breakpoints: (
         }
     }
 
-    &.col--2{
+    &.card--2{
         @include media("<desktop-md", ">=desktop") {
             gap: 40px;
         }
@@ -721,7 +765,7 @@ $breakpoints: (
         }
     }
 
-    &.col--3{
+    &.card--3{
         gap: 12px;
         @include media(">=tablet") {
             gap: 32px;
@@ -737,7 +781,7 @@ $breakpoints: (
     }
 }
 
-.visual-card{
+.gallery-card{
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -766,7 +810,7 @@ $breakpoints: (
         width: 100%;
     }
 
-    &.border--offset{
+    &.border--top{
         text-align: left;
         padding-top: 40px;
         border-top: 1px solid rgba($color: $primary-dark-color, $alpha: .08);
@@ -1016,6 +1060,7 @@ $breakpoints: (
         @include media(">=desktop") {
             min-height: 42px;
         }
+        
         img{
             display: block;
         }
@@ -1029,23 +1074,27 @@ $breakpoints: (
 .headtitle-num{
     display: flex;
     flex-direction: column;
-    align-items: center;
     font-size: 55px;
     line-height: 1.095;
     gap: 5px;
     margin-bottom: 24px;
-    @include media(">=tablet") {
-        align-items: flex-start;
-    }
     @include media(">=desktop") {
+        align-items: center;
         flex-direction: row;
         gap: 15px;
         margin-bottom: 30px;
     }
 
+    &:last-child{
+        margin-bottom: 0;
+    }
+
     &__text{
         font-size: 16px;
         line-height: 1.45;
+        @include media(">=desktop") {
+            max-width: 120px;
+        }
     }
 
     br{
@@ -1094,7 +1143,7 @@ $breakpoints: (
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: left;
     margin-top: -105px;
     position: relative;
     z-index: 1;
@@ -1105,7 +1154,7 @@ $breakpoints: (
         overflow: hidden;
         border: 5px solid #fff;
         border-radius: 50%;
-        margin-bottom: 24px;
+        margin-bottom: 32px;
         @include media(">=desktop") {
             margin-bottom: 40px;
         }
@@ -1119,16 +1168,10 @@ $breakpoints: (
     }
 
     &__title{
+        text-align: center;
+        margin-bottom: 32px;
         @include media(">=desktop") {
             margin-bottom: 80px;
-        }
-    }
-
-    &__content{
-        text-align: left;
-        @include media(">=tablet") {
-            columns: 2;
-            column-gap: 30px;
         }
     }
 }
@@ -1214,68 +1257,9 @@ $breakpoints: (
     }
 }
 
-.content-row{
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: column;
-    @include media(">=tablet") {
-        flex-direction: row;
-        gap: 50px;
-    }
+.tile-content{
     @include media(">=desktop") {
-        gap: 60px;
-    }
-
-    &__inner{
-        @include media(">=tablet") {
-            width: 50%;
-        }
-        @include media(">=desktop") {
-            width: 640px;
-        }
-    }
-
-    &__content{
-        width: 100%;
-    }
-}
-
-.tile-row{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 32px;
-    margin-bottom: 40px;
-    @include media(">=tablet") {
-        flex-direction: row;
-        margin-bottom: 60px;
-    }
-    &:last-child{
-        margin-bottom: 0;
-    }
-
-    &__item{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        @include media(">=tablet") {
-            width: calc(50% - 16px);
-        }
-    }
-
-    &__title{
-        @include media(">=tablet") {
-            margin-bottom: 76px;
-        }
-    }
-
-    p{
-        &:not(:last-child){
-            margin-bottom: 30px;
-        }
+        max-width: 485px;
     }
 }
 
@@ -1290,7 +1274,10 @@ $breakpoints: (
 
     > li{
         position: relative;
-        padding-left: 35px;
+        padding-left: 30px;
+        @include media(">=desktop") {
+            padding-left: 35px;
+        }
         &:not(:first-child){
             margin-top: 16px;
         }
@@ -1308,21 +1295,14 @@ $breakpoints: (
     &.circle--icon{
         > li{
             &:before {
-                top: 0;
-                font-size: 22px;
+                top: 2px;
+                font-size: 18px;
                 @extend .icon-check-circle;
                 @include media(">=desktop") {
-                    top: 2px;
+                    font-size: 22px;
                 }
             }
         }
-    }
-}
-
-.column-text{
-    @include media(">=tablet") {
-        columns: 2;
-        column-gap: 30px;
     }
 }
 
@@ -1897,25 +1877,33 @@ $breakpoints: (
     }
 }
 
-.contact-row{
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 40px;
+// .contact-row{
+//     display: flex;
+//     align-items: flex-start;
+//     flex-direction: column;
+//     gap: 40px;
+//     @include media(">=desktop") {
+//         flex-direction: row;
+//         gap: 72px;
+//     }
+//     &__item{
+//         width: 100%;
+//         @include media(">=desktop") {
+//             width: 48%;
+//         }
+//         &:first-child{
+//             @include media(">=desktop") {
+//                 width: 52%;
+//             }
+//         }
+//     }
+// }
+
+.form-wrapper{
+    background: rgba(255, 255, 255, 0.04);
+    padding: 30px 24px;
     @include media(">=desktop") {
-        flex-direction: row;
-        gap: 72px;
-    }
-    &__item{
-        width: 100%;
-        @include media(">=desktop") {
-            width: 48%;
-        }
-        &:first-child{
-            @include media(">=desktop") {
-                width: 52%;
-            }
-        }
+        padding: 40px;
     }
 }
 
@@ -1925,6 +1913,9 @@ $breakpoints: (
     align-items: flex-start;
     width: 100%;
     gap: 16px;
+    @include media(">=desktop-md") {
+        padding-left: 45px;
+    }
     &__item{
         padding: 30px 24px 30px 64px;
         width: 100%;
@@ -2020,5 +2011,31 @@ $breakpoints: (
     &__title{
         font-weight: normal;
         margin-bottom: 0;
+    }
+}
+
+.btn-play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    color: #223122;
+    font-size: 60px;
+    line-height: 1;
+    transform: translateY(-50%) translateX(-50%);
+    @include media(">=desktop") {
+        font-size: 80px;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 35px;
+        height: 35px;
+        background-color: #fff;
+        z-index: -1;
+        transform: translateY(-50%) translateX(-50%);
+        border-radius: 50%;
     }
 }
