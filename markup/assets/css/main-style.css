@@ -4868,6 +4868,7 @@ ol li {
 .card__headtitle {
   padding: 24px;
   position: relative;
+  width: 100%;
   margin: 0;
 }
 .card__headtitle::before {
