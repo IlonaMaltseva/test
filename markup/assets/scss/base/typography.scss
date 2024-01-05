@@ -127,7 +127,6 @@ p{
 
 .text--sm{
     font-size: 14px;
-    // line-height: 1.5;
     line-height: 21px;
 }
 
@@ -178,18 +177,6 @@ a{
 		& + li {
 			margin-top: $margin-li-top;
 		}
-	}
-
-	// nested list ul
-	ul {
-		margin-bottom: 0;
-		margin-top: $margin-li-top;
-	}
-
-	// nested list ol
-	ol {
-		margin-bottom: 0;
-		margin-top: $margin-li-top;
 	}
 }
 

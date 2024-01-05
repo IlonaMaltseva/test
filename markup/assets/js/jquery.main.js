@@ -2,6 +2,7 @@ var $ = jQuery.noConflict();
 jQuery(function () {
 	isElementExist(".slider", initSliderMobile);
 	isElementExist("#modal-show", initModalShow);
+	isElementExist("#subscribe-modal", initSubscribeModal);
 	isElementExist(".contact-form .mktoForm", initFormModal);
 
 	initTabs();
@@ -26,8 +27,16 @@ function initFancybox() {
 	$.fancybox.defaults.touch = false;
 }
 
+function initSubscribeModal(){
+	$("#subscribe-modal").fancybox();
+
+	setTimeout(function () {
+		$("#subscribe-modal").trigger('click');
+	}, 5000);
+}
+
 function initFormModal(){
-	$('.contact-form .mktoForm').on('click', 'input[type="checkbox"], label', function (e) {
+	$('.modal-content .contact-form .mktoForm').on('click', 'input[type="checkbox"], label', function (e) {
 		e.stopImmediatePropagation();
 	});
 }
