@@ -106,9 +106,12 @@ nav.standard {
 	background-color: $primary-dark-color;
 	&__container{
 		display: flex;
-		justify-content: flex-end;
+		justify-content: center;
 		align-items: center;
 		gap: 8px;
+		@include media(">=tablet") {
+			justify-content: flex-end;
+		}
 	}
 
 	&__text {
@@ -551,11 +554,6 @@ nav.standard {
 }
 
 @media only screen and (max-width: 480px) {
-	.top-bar{
-		&__container{
-			justify-content: center;
-		}
-	}
 
 	.header-logo{
 		width: 128px;

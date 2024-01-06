@@ -5,12 +5,10 @@
     flex-wrap: wrap;
     text-align: left;
     gap: 32px;
-    margin-bottom: 40px;
     @include media(">=tablet") {
         flex-direction: row;
         margin-left: -16px;
         margin-right: -16px;
-        margin-bottom: 60px;
         gap: 32px 0;
     }
 
@@ -28,11 +26,11 @@
         margin-bottom: 0;
     }
 
-    p{
-        &:not(:last-child){
-            margin-bottom: 30px;
-        }
-    }
+    // p{
+    //     &:not(:last-child){
+    //         margin-bottom: 30px;
+    //     }
+    // }
 
     h1,
     h2,

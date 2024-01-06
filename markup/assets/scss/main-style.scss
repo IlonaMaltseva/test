@@ -149,12 +149,13 @@ $breakpoints: (
 .bg-decor{
     position: absolute;
     z-index: -1;
-    width: 605px;
+    // width: 605px;
     bottom: 0;
     right: 0;
-    @include media(">=desktop") {
-        width: 825px;
-    }
+    left: 0;
+    // @include media(">=desktop") {
+    //     width: 825px;
+    // }
 
     img{
         display: block;
@@ -212,7 +213,7 @@ $breakpoints: (
 
 	@include media(">=desktop") {
         max-width: 800px;
-        margin: 0 auto 80px;
+        margin: 0 auto 60px;
     }
 
     &.title--start{
@@ -412,6 +413,8 @@ $breakpoints: (
         width: 100%;
     
         figcaption{
+            font-size: 14px;
+            line-height: 1.5;
             text-align: center;
             padding-top: 10px;
         }
@@ -422,6 +425,21 @@ $breakpoints: (
 .title--offset{
     @include media(">=tablet") {
         margin-bottom: 76px;
+    }
+}
+
+.tile-wrap,
+.tile-row{
+    margin-bottom: 40px;
+    @include media(">=tablet") {
+        margin-bottom: 60px;
+    }
+    p{
+        &:not(:first-child){
+            @include media(">=desktop") {
+                margin-bottom: 40px;
+            }
+        }
     }
 }
 
@@ -573,13 +591,13 @@ $breakpoints: (
             }
         }
 
-        p{
-            &:not(:last-child){
-                @include media(">=desktop") {
-                    margin-bottom: 40px;
-                }
-            }
-        }
+        // p{
+        //     &:not(:last-child){
+        //         @include media(">=desktop") {
+        //             margin-bottom: 40px;
+        //         }
+        //     }
+        // }
     }
 }
 
@@ -867,6 +885,14 @@ $breakpoints: (
     }
 }
 
+.card-heading{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
 .card{
     display: flex;
     flex-direction: column;
@@ -957,6 +983,20 @@ $breakpoints: (
         }
     }
 
+    &__btn{
+        width: 100%;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        border-top: 1px solid rgba($color: #223122, $alpha: .16);
+        .btn{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            @include media("<phone-sm") {
+                width: 100%;
+            }
+        }
+    }
+
     .btn-holder{
         @include media(">=desktop") {
             width: 100%;
@@ -972,7 +1012,12 @@ $breakpoints: (
 .action-panel{
     display: flex;
     align-items: center;
+    width: 100%;
     gap: 24px;
+    margin-bottom: 24px;
+    &:last-child{
+        margin-bottom: 0;
+    }
     &__btn{
         display: flex;
         align-items: center;
