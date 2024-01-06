@@ -107,11 +107,9 @@ nav.standard {
 	&__container{
 		display: flex;
 		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
 		gap: 8px;
-		@include media(">=tablet") {
-			justify-content: flex-end;
-		}
 	}
 
 	&__text {
@@ -407,6 +405,12 @@ nav.standard {
 		padding-bottom: 20px;
 		position: relative;
 	}
+	
+	.top-bar {
+		&__container{
+			justify-content: center;
+		}
+	}
 
 	.header-logo{
 		margin: 0 auto;
@@ -425,7 +429,6 @@ nav.standard {
 			padding: 20px !important;
 		}
 		.ubermenu-responsive-default.ubermenu-responsive {
-			// max-height: calc(100vh - 130px);
 			padding-top: 20px;
 			.ubermenu-nav {
 				.ubermenu-item {

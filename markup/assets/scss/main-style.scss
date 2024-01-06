@@ -149,14 +149,9 @@ $breakpoints: (
 .bg-decor{
     position: absolute;
     z-index: -1;
-    // width: 605px;
     bottom: 0;
     right: 0;
     left: 0;
-    // @include media(">=desktop") {
-    //     width: 825px;
-    // }
-
     img{
         display: block;
         width: 100%;
@@ -435,7 +430,7 @@ $breakpoints: (
         margin-bottom: 60px;
     }
     p{
-        &:not(:first-child){
+        &:not(:last-child){
             @include media(">=desktop") {
                 margin-bottom: 40px;
             }
@@ -590,14 +585,6 @@ $breakpoints: (
                 margin-left: -176px;
             }
         }
-
-        // p{
-        //     &:not(:last-child){
-        //         @include media(">=desktop") {
-        //             margin-bottom: 40px;
-        //         }
-        //     }
-        // }
     }
 }
 
@@ -910,19 +897,7 @@ $breakpoints: (
         }
     }
 
-    &--cta{
-        color: #fff;
-        background-color: $primary-color;
-        border-color: $primary-color;
-
-        // .btn{
-        //     @include media(">=desktop") {
-        //         width: 100%;
-        //     }
-        // }
-    }
-
-    &--social{
+    &--article{
         border: none;
     }
 
@@ -952,7 +927,7 @@ $breakpoints: (
         width: 100%;
         overflow: hidden;
         height: 160px;
-        .card--social &{
+        .card--article &{
             height: 214px;
         }
 
@@ -970,7 +945,7 @@ $breakpoints: (
         flex-direction: column;
         align-items: flex-start;
         padding: 24px;
-        .card--social &{
+        .card--article &{
             padding-left: 0;
             padding-right: 0;
             flex: auto;
@@ -980,6 +955,49 @@ $breakpoints: (
             @include media("<desktop") {
                 padding: 0;
             }
+        }
+    }
+}
+
+.card-cta{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: 100%;
+    color: #fff;
+    background-color: $primary-color;
+    border-color: $primary-color;
+    @include media(">=desktop") {
+        padding: 24px;
+    }
+
+    .btn-holder{
+        @include media(">=desktop") {
+            width: 100%;
+        }
+        .btn{
+            @include media(">=desktop") {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.card-action{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+
+    &__row{
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        margin-bottom: 24px;
+        &:last-child{
+            margin-bottom: 0;
         }
     }
 
@@ -996,51 +1014,30 @@ $breakpoints: (
             }
         }
     }
-
-    .btn-holder{
-        @include media(">=desktop") {
-            width: 100%;
-        }
-        .btn{
-            @include media(">=desktop") {
-                width: 100%;
-            }
-        }
-    }
 }
 
-.action-panel{
+.btn-action{
     display: flex;
     align-items: center;
-    width: 100%;
-    gap: 24px;
-    margin-bottom: 24px;
-    &:last-child{
-        margin-bottom: 0;
+    gap: 5px;
+    @include media(">=desktop") {
+        gap: 10px;
     }
-    &__btn{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        @include media(">=desktop") {
-            gap: 10px;
-        }
-        &:last-child{
-            justify-content: flex-end;
-            flex: 1 1 auto;
-        }
+    &:last-child{
+        justify-content: flex-end;
+        flex: 1 1 auto;
+    }
 
-        &:hover{
-            .icon{
-                color: rgba($color: $primary-color, $alpha: 1);
-            }
-        }
-
+    &:hover{
         .icon{
-            flex-shrink: 0;
-            font-size: 22px;
-            color: rgba($color: $primary-dark-color, $alpha: .5);
+            color: rgba($color: $primary-color, $alpha: 1);
         }
+    }
+
+    .icon{
+        flex-shrink: 0;
+        font-size: 22px;
+        color: rgba($color: $primary-dark-color, $alpha: .5);
     }
 }
 
@@ -1921,28 +1918,6 @@ $breakpoints: (
         }
     }
 }
-
-// .contact-row{
-//     display: flex;
-//     align-items: flex-start;
-//     flex-direction: column;
-//     gap: 40px;
-//     @include media(">=desktop") {
-//         flex-direction: row;
-//         gap: 72px;
-//     }
-//     &__item{
-//         width: 100%;
-//         @include media(">=desktop") {
-//             width: 48%;
-//         }
-//         &:first-child{
-//             @include media(">=desktop") {
-//                 width: 52%;
-//             }
-//         }
-//     }
-// }
 
 .form-wrapper{
     background: rgba(255, 255, 255, 0.04);
