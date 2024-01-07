@@ -4622,17 +4622,13 @@ ol li {
   }
 }
 .intro-wrap__bg img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  display: block;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.intro-wrap__bg img::after {
+.intro-wrap__bg::after {
   content: "";
   position: absolute;
   top: 0;
